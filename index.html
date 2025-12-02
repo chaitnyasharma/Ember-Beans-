@@ -1185,6 +1185,78 @@
         padding: 1.1rem 1.1rem 1rem;
       }
     }
+    /* Extra mobile hardening */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow-x: hidden; /* kill any accidental sideways scroll */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Make the rating box sit nicely above the images */
+  .hero-floating-card {
+    position: static;
+    margin-bottom: 0.9rem;
+    align-self: flex-start;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-card {
+    padding-top: 1.4rem;
+  }
+
+  /* Stack hero images instead of side-by-side where it gets tight */
+  .hero-image-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .hero-side-column {
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding-top: 2.2rem;
+  }
+
+  /* Make the nav dropdown full-width so it doesn't feel cramped */
+  .nav-menu-open .nav-links,
+  .nav-menu-open .nav-actions {
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
+
+  /* Menu: full-width cards */
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Gallery: stack everything */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-main {
+    min-height: 220px;
+  }
+}
+
   </style>
 </head>
 <body>
